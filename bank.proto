@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto"; 
+package main;
+
+
+message Empty {}
+
+message AccountIdentifier {
+  string account_id = 1;
+}
+
+message DepositAccountRequest {
+  string account_id = 1;
+  float amount = 2;
+}
+
+message WithdrawAccountRequest {
+  string account_id = 1;
+  float amount = 2;
+}
+
+message AccountBalance {
+  float balance = 1;
+}
+
+message BalanceAccountRequest {
+  string account_id = 1;
+}
+
+message AddInterestRequest {
+  string account_id = 1;
+  float  interestRate = 2;
+}
+
+
+
+service BankAccountService {
+  rpc OpenAccount(google.protobuf.Empty) returns (AccountIdentifier);
+  rpc WithdrawAccount(WithdrawAccountRequest) returns (AccountBalance);
+  rpc DepositAccount(DepositAccountRequest) returns (AccountBalance);
+  rpc GetBalance(BalanceAccountRequest) returns (AccountBalance);
+  rpc AddInterest(AddInterestRequest) returns (AccountBalance);
+}
