@@ -16,19 +16,19 @@ A screenshot of the console from multiple terminals shows multiple clients acces
 
 The system offers the following functionalities via RPC:
 
-1. OpenAccount
+1. OpenAccount:
 Creates a new bank account and returns a unique account identifier.
 
-2. DepositAccount
+2. DepositAccount:
 Deposits a specified amount into an account.
 
-3. AddInterest
+3. AddInterest:
 Applies a specific interest percentage to the balance of an account.
 
-4. WithdrawAccount
+4. WithdrawAccount:
 Withdraws a specified amount of money from an account.
 
-5. GetBalance
+5. GetBalance:
 Retrieves the balance of a specified account.
 
 
